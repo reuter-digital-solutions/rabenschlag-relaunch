@@ -129,7 +129,7 @@ function render_mail(array $o): string
         $h .= '<tr><td style="background:#FFFFFF;padding:0 36px 32px" class="px">'
             . '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:' . $c['teal'] . ';border-radius:18px"><tr>'
             . '<td width="72" style="padding:18px 0 18px 18px"><div style="width:52px;height:52px;border-radius:52px;background:' . $c['ink'] . ';color:' . $c['teal'] . ';font-family:' . MFONT . ';font-size:17px;font-weight:700;line-height:52px;text-align:center">KR</div></td>'
-            . '<td style="padding:18px;font-family:' . MFONT . ';color:' . $c['ink'] . '"><span style="font-size:13px">' . me(SITE['owner']) . ' · Geschäftsführer</span><br>'
+            . '<td style="padding:18px;font-family:' . MFONT . ';color:' . $c['ink'] . '"><span style="font-size:13px">' . me(SITE['owner']) . ' · Inhaber</span><br>'
             . '<a href="tel:' . me(SITE['mobile_tel']) . '" style="font-size:20px;font-weight:700;color:' . $c['ink'] . ';text-decoration:none">' . me(SITE['mobile']) . '</a><br>'
             . '<span style="font-size:13px">' . me(SITE['hours']) . '</span></td></tr></table></td></tr>';
     }

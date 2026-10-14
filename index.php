@@ -187,7 +187,7 @@ $years = (int) date('Y') - SITE['founded'];
       <h2 class="h2" data-split>Aus Leidenschaft für Technik.</h2>
       <p class="lead" data-reveal style="--d:2">Seit unserer Gründung im Jahr <?= SITE['founded'] ?> haben wir uns stetig weiterentwickelt. Angefangen mit MSR-Technik und Schaltanlagenbau, sind wir heute etablierter Partner der Automatisierungstechnik – mit dem Anspruch, unseren Kunden zukunftssichere Technologie zu bieten.</p>
       <div class="facts" data-stagger>
-        <div class="fact"><small>Geschäftsführer</small><strong><?= e(SITE['owner']) ?></strong></div>
+        <div class="fact"><small>Inhaber</small><strong><?= e(SITE['owner']) ?></strong></div>
         <div class="fact"><small>Schwerpunkt</small><strong>MSR-Technik</strong></div>
         <div class="fact"><small>Standort</small><strong><?= e(SITE['city']) ?></strong></div>
         <div class="fact"><small>Fertigung</small><strong>Einzelstück bis Serie</strong></div>

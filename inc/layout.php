@@ -97,7 +97,7 @@ function page_start(array $m): void
         'email' => SITE['email'],
         'telephone' => SITE['mobile_tel'],
         'foundingDate' => (string) SITE['founded'],
-        'founder' => ['@type' => 'Person', 'name' => SITE['owner']],
+        'founder' => ['@type' => 'Person', 'name' => SITE['owner'], 'jobTitle' => 'Inhaber'],
         'address' => ['@type' => 'PostalAddress', 'streetAddress' => SITE['street'], 'postalCode' => SITE['zip'], 'addressLocality' => SITE['city'], 'addressCountry' => 'DE'],
         'openingHoursSpecification' => [
             ['@type' => 'OpeningHoursSpecification', 'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday'], 'opens' => '08:00', 'closes' => '16:00'],
@@ -247,7 +247,7 @@ function contact_section(string $id = 'kontakt', string $preset = ''): void
       <h2 class="h2">Sprechen wir über Ihr Projekt.</h2>
       <a class="person" href="tel:<?= e(SITE['mobile_tel']) ?>">
         <span class="avatar">KR</span>
-        <span><small><?= e(SITE['owner']) ?> · Geschäftsführer</small><strong><?= e(SITE['mobile']) ?></strong></span>
+        <span><small><?= e(SITE['owner']) ?> · Inhaber</small><strong><?= e(SITE['mobile']) ?></strong></span>
         <span class="person-go"><?= icon('phone', 20) ?></span>
       </a>
       <ul class="contact-list">

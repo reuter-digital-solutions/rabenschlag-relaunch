@@ -94,7 +94,7 @@ site_header('karriere', ['Jetzt bewerben', '#bewerbung']);
       <p style="margin-top:18px;font-size:17px;color:#0F2E28">Ein Lebenslauf reicht für den Anfang. Lieber erst sprechen?</p>
       <a class="person" style="margin-top:auto;padding-top:16px" href="tel:<?= e(SITE['mobile_tel']) ?>">
         <span class="avatar">KR</span>
-        <span><small><?= e(SITE['owner']) ?> · Geschäftsführer</small><strong><?= e(SITE['mobile']) ?></strong></span>
+        <span><small><?= e(SITE['owner']) ?> · Inhaber</small><strong><?= e(SITE['mobile']) ?></strong></span>
         <span class="person-go"><?= icon('phone', 20) ?></span>
       </a>
     </div>

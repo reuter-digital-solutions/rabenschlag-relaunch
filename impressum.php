@@ -13,9 +13,7 @@ legal_hero('Impressum', 'Impressum');
   <div class="legal">
     <div class="legal-body" data-reveal>
       <h2>Angaben gemäß § 5 DDG</h2>
-      <p><strong><?= e(SITE['name']) ?></strong><br><?= e(SITE['street']) ?><br><?= e(SITE['zip'] . ' ' . SITE['city']) ?></p>
-      <h3>Vertreten durch</h3>
-      <p><?= e(SITE['owner']) ?></p>
+      <p><strong><?= e(SITE['name']) ?></strong><br>Inhaber: <?= e(SITE['owner']) ?> (Einzelunternehmen)<br><?= e(SITE['street']) ?><br><?= e(SITE['zip'] . ' ' . SITE['city']) ?></p>
       <h3>Kontakt</h3>
       <p>Telefon: <a href="tel:<?= e(SITE['phone_tel']) ?>"><?= e(SITE['phone']) ?></a><br>
       Mobil: <a href="tel:<?= e(SITE['mobile_tel']) ?>"><?= e(SITE['mobile']) ?></a><br>

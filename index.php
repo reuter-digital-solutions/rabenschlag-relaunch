@@ -33,7 +33,7 @@ $years = (int) date('Y') - SITE['founded'];
         <div class="tag"><span class="mono">=S1</span>Steuerungsbau</div>
         <div class="hero-chips">
           <div class="float-chip"><span class="tile tile-sm"><?= icon('box', 20) ?></span><span><strong>Ab Losgröße 1</strong><small>Einzelstück bis Serie</small></span></div>
-          <div class="float-chip"><span class="tile tile-sm"><?= icon('globe', 20) ?></span><span><strong>Inbetriebnahme</strong><small>auch weltweit</small></span></div>
+          <div class="float-chip"><span class="tile tile-sm"><?= icon('power', 20) ?></span><span><strong>Inbetriebnahme</strong><small>aus einer Hand</small></span></div>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@ $years = (int) date('Y') - SITE['founded'];
 <div class="marquee" aria-hidden="true">
   <div class="marquee-track">
     <?php for ($r = 0; $r < 2; $r++): ?>
-    <span>Schaltschrankbau <?= icon('bolt', 20) ?> DDC-Programmierung <?= icon('bolt', 20) ?> Visualisierung <?= icon('bolt', 20) ?> Heizung · Lüftung · Klima <?= icon('bolt', 20) ?> Bus-Systeme <?= icon('bolt', 20) ?> Fördertechnik <?= icon('bolt', 20) ?> Inbetriebnahme weltweit <?= icon('bolt', 20) ?></span>
+    <span>Schaltschrankbau <?= icon('bolt', 20) ?> DDC-Programmierung <?= icon('bolt', 20) ?> Visualisierung <?= icon('bolt', 20) ?> Heizung · Lüftung · Klima <?= icon('bolt', 20) ?> Bus-Systeme <?= icon('bolt', 20) ?> Fördertechnik <?= icon('bolt', 20) ?> Inbetriebnahme <?= icon('bolt', 20) ?></span>
     <?php endfor; ?>
   </div>
 </div>
@@ -170,7 +170,7 @@ $years = (int) date('Y') - SITE['founded'];
           ['Automatisierung', 'plc', 'Lüftungsanlage für Produktion und Reinigung eines Zerlegebetriebs', 'Programmierung · Visualisierung · Schaltschrankbau', '[Kunde], Düsseldorf'],
           ['MSR-Technik', 'gauge', 'Heizungsanlage mit BHKW, Hybridsolar und Eisspeicher, Anbindung an den Pool', 'Konzeption · Visualisierung · Programmierung', '[Kunde, Ort]'],
           ['Schaltschrankbau', 'cabinet', 'Förderstrecke mit Anbindung an einen OPC-Server', 'Visualisierung · Programmierung', '[Kunde, Ort]'],
-          ['Komplettprojekt', 'globe', 'Von der Beratung bis zur Inbetriebnahme – weltweit', 'Beratung · Projektierung · Programmierung · Schaltschrankbau · Installation', '[Kunde], Düsseldorf'],
+          ['Komplettprojekt', 'power', 'Von der Beratung bis zur Inbetriebnahme', 'Beratung · Projektierung · Programmierung · Schaltschrankbau · Installation', '[Kunde], Düsseldorf'],
       ];
       foreach ($projects as $k => [$cat, $ic, $title, $scope, $client]): ?>
       <article class="card project spot<?= $k === 3 ? ' project-dark' : '' ?>" data-reveal style="--d:<?= $k ?>">

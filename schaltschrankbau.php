@@ -27,7 +27,7 @@ service_page([
     'projects_text' => 'Ein Einblick in unsere Arbeit im Schaltschrankbau.',
     'projects' => [
         ['Visualisierung und Programmierung einer Förderstrecke mit Anbindung an einen OPC-Server', '[Kunde, Ort]'],
-        ['Beratung, Projektierung, Programmierung, Schaltschrankbau, Installation und Inbetriebnahme – weltweit', '[Kunde, Ort]'],
+        ['Beratung, Projektierung, Programmierung, Schaltschrankbau, Installation und Inbetriebnahme', '[Kunde, Ort]'],
         ['Programmierung, Visualisierung und Schaltschrankbau für die Lüftungsanlage eines Zerlegebetriebs', '[Kunde, Ort]'],
     ],
     'cta_title' => 'Ihre Aufgabe ist unser Projekt.',

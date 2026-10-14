@@ -27,7 +27,7 @@ service_page([
     'projects_text' => 'Ein Einblick in unsere Arbeit im Bereich der Automatisierung.',
     'projects' => [
         ['Schaltschrankbau für einen unserer Bestandskunden', '[Kunde], Düsseldorf'],
-        ['Technische Beratung, Projektierung, Programmierung mit Visualisierung, Schaltschrankbau, Installation und Inbetriebnahme – weltweit', '[Kunde], Düsseldorf'],
+        ['Technische Beratung, Projektierung, Programmierung mit Visualisierung, Schaltschrankbau, Installation und Inbetriebnahme', '[Kunde], Düsseldorf'],
         ['Programmierung, Visualisierung und Schaltschrankbau für die Lüftungsanlage für Produktion und Reinigung eines Zerlegebetriebs', '[Kunde], Düsseldorf'],
     ],
     'cta_title' => 'Jetzt Ihr Projekt anfragen.',

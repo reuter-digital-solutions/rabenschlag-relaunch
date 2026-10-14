@@ -103,7 +103,6 @@ function page_start(array $m): void
             ['@type' => 'OpeningHoursSpecification', 'dayOfWeek' => ['Monday', 'Tuesday', 'Wednesday', 'Thursday'], 'opens' => '08:00', 'closes' => '16:00'],
             ['@type' => 'OpeningHoursSpecification', 'dayOfWeek' => 'Friday', 'opens' => '08:00', 'closes' => '12:00'],
         ],
-        'areaServed' => 'Weltweit',
         'knowsAbout' => ['Schaltschrankbau', 'Automatisierungstechnik', 'MSR-Technik', 'DDC-Programmierung', 'Heizung, Lüftung, Klima'],
     ];
     ?>

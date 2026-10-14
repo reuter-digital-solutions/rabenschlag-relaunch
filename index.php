@@ -107,7 +107,7 @@ $years = (int) date('Y') - SITE['founded'];
 
 <!-- ============ ABLAUF ============ -->
 <section class="section section-tight" id="ablauf">
-  <div class="panel">
+  <div class="panel proc-panel">
     <div class="sec-head">
       <div>
         <?= eyebrow('Ablauf') ?>
@@ -115,18 +115,58 @@ $years = (int) date('Y') - SITE['founded'];
       </div>
       <p data-reveal style="--d:2">Ein Ansprechpartner für alle Schritte – keine Schnittstellenverluste zwischen Planung, Bau und Programmierung.</p>
     </div>
-    <div class="steps-wrap" data-steps>
-    <span class="steps-line" aria-hidden="true"></span>
-    <ol class="steps">
-      <?php
-      $steps = [['chat', 'Technische Beratung'], ['plan', 'Projektierung'], ['code', 'Programmierung &amp; Visualisierung'], ['cabinet', 'Schaltschrankbau'], ['wrench', 'Installation'], ['power', 'Inbetriebnahme']];
-      foreach ($steps as $k => [$ic, $t]): ?>
-      <li class="step" data-reveal style="--d:<?= $k ?>">
-        <div class="step-top"><span class="tile tile-sm tile-white"><?= icon($ic, 22) ?></span><span class="step-num">0<?= $k + 1 ?></span></div>
-        <span class="step-title"><?= $t ?></span>
-      </li>
-      <?php endforeach; ?>
-    </ol>
+
+    <div class="proc" data-proc>
+      <div class="proc-line" aria-hidden="true"><span class="proc-fill"><span class="proc-head"></span></span></div>
+      <ol class="proc-steps">
+        <?php
+        $steps = [
+            ['chat', 'Technische Beratung', 'Wir klären Anforderungen und Ziele – gemeinsam mit Ihnen an einem Tisch.'],
+            ['plan', 'Projektierung', 'Planung von Steuerung und Schaltanlage – auf Wunsch mit bestehenden Regelungen oder Regelungen führender Hersteller.'],
+            ['code', 'Programmierung &amp; Visualisierung', 'DDC- und SPS-Programmierung mit Visualisierungen, die Ihre Prozesse bedienbar machen.'],
+            ['cabinet', 'Schaltschrankbau', 'Fertigung im eigenen Betrieb – vom Einzelstück ab Losgröße 1 bis zur Serie.'],
+            ['wrench', 'Installation', 'Die Verbindung zwischen Feldgeräten und Schaltschränken stellen unsere eigenen Mitarbeiter her.'],
+        ];
+        foreach ($steps as $k => [$ic, $t, $d]): ?>
+        <li class="proc-step" style="--i:<?= $k ?>">
+          <span class="proc-tile"><?= icon($ic, 24, 'nd') ?><span class="proc-ping" aria-hidden="true"></span></span>
+          <span class="proc-num">0<?= $k + 1 ?></span>
+          <h3 class="proc-title"><?= $t ?></h3>
+          <p class="proc-text"><?= e(html_entity_decode($d)) ?></p>
+        </li>
+        <?php endforeach; ?>
+      </ol>
+    </div>
+
+    <div class="power" data-power>
+      <span class="power-light" aria-hidden="true"></span>
+      <div class="power-copy">
+        <span class="proc-num power-num">06 · Inbetriebnahme</span>
+        <h3 class="power-title"><span class="t-off">Bereit zur Inbetriebnahme.</span><span class="t-on">Ihre Anlage läuft.</span></h3>
+        <p class="power-text"><span class="t-off">Beraten, geplant, programmiert, gebaut und installiert. Jetzt fehlt nur noch ein Handgriff.</span><span class="t-on">Wir nehmen Ihre Anlage in Betrieb und übergeben sie – vom ersten Gespräch bis zum laufenden Betrieb aus einer Hand.</span></p>
+        <ul class="leds" aria-hidden="true">
+          <li><span></span>Spannung</li>
+          <li><span></span>Steuerung</li>
+          <li><span></span>Betrieb</li>
+        </ul>
+        <div class="power-cta"><?= btn('Projekt starten', '#kontakt') ?></div>
+      </div>
+      <div class="power-switch">
+        <button class="mainswitch" type="button" aria-pressed="false" aria-label="Hauptschalter einschalten">
+          <svg viewBox="0 0 200 200" aria-hidden="true">
+            <rect class="ms-plate" x="10" y="10" width="180" height="180" rx="22"/>
+            <circle class="ms-ring" cx="100" cy="100" r="60"/>
+            <text class="ms-lbl ms-0" x="16" y="109">0</text>
+            <text class="ms-lbl ms-1" x="94" y="33">I</text>
+            <g class="ms-handle">
+              <rect x="46" y="85" width="108" height="30" rx="15"/>
+              <circle cx="100" cy="100" r="28"/>
+              <rect class="ms-grip" x="54" y="95" width="30" height="10" rx="5"/>
+            </g>
+          </svg>
+        </button>
+        <span class="power-hint mono"><span class="t-off">Hauptschalter umlegen</span><span class="t-on">Eingeschaltet</span></span>
+      </div>
     </div>
   </div>
 </section>

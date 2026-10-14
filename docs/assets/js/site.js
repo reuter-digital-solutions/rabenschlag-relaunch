@@ -92,7 +92,7 @@
   $$('[data-count]').forEach((el) => countIO.observe(el));
 
   /* ---------- Scroll: Header, Fortschritt, Parallax, Ablauf ---------- */
-  const steps = $('[data-steps]');
+  const proc = $('[data-proc]');
   const parallax = $$('[data-parallax]');
   const dock = $('.dock');
   let lastY = 0;
@@ -117,12 +117,13 @@
       });
     }
 
-    if (steps) {
-      const r = steps.getBoundingClientRect();
-      const p = Math.min(1, Math.max(0, (innerHeight * 0.75 - r.top) / (r.height + innerHeight * 0.25)));
-      steps.style.setProperty('--p', p.toFixed(3));
-      const items = $$('.step', steps);
-      items.forEach((s, i) => s.classList.toggle('on', p >= (i + 0.5) / items.length || reduce));
+    if (proc) {
+      // Fortschritt: startet, wenn die Strecke ins untere Drittel kommt, endet bei der Bildschirmmitte
+      const r = proc.getBoundingClientRect();
+      const p = reduce ? 1 : Math.min(1, Math.max(0, (innerHeight * 0.85 - r.top) / (innerHeight * 0.5 + r.height * 0.5)));
+      proc.style.setProperty('--p', p.toFixed(3));
+      const items = $$('.proc-step', proc);
+      items.forEach((s, i) => s.classList.toggle('on', p >= i / (items.length - 1) - 0.001));
     }
     lastY = y;
     ticking = false;
@@ -130,6 +131,44 @@
   addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(onScroll); ticking = true; } }, { passive: true });
   addEventListener('resize', onScroll);
   onScroll();
+
+  /* ---------- Hauptschalter: Inbetriebnahme ---------- */
+  const power = $('[data-power]');
+  if (power) {
+    const sw = $('.mainswitch', power);
+    const section = power.closest('.proc-panel');
+    let touched = false;
+    const setPower = (on) => {
+      // Licht breitet sich vom Schalter aus
+      const pr = power.getBoundingClientRect();
+      const sr = sw.getBoundingClientRect();
+      power.style.setProperty('--sx', `${sr.left + sr.width / 2 - pr.left}px`);
+      power.style.setProperty('--sy', `${sr.top + sr.height / 2 - pr.top}px`);
+      power.classList.toggle('on', on);
+      section.classList.toggle('powered', on);
+      sw.setAttribute('aria-pressed', on);
+      sw.setAttribute('aria-label', on ? 'Hauptschalter ausschalten' : 'Hauptschalter einschalten');
+      if (on && !reduce) {
+        for (let k = 0; k < 10; k++) {
+          const sp = document.createElement('span');
+          sp.className = 'power-spark';
+          sp.style.left = `${sr.left + sr.width / 2 - pr.left - 2}px`;
+          sp.style.top = `${sr.top + sr.height / 2 - pr.top - 13}px`;
+          sp.style.setProperty('--a', `${k * 36 + Math.random() * 14}deg`);
+          sp.style.background = k % 2 ? 'var(--teal)' : 'var(--volt)';
+          power.append(sp);
+          setTimeout(() => sp.remove(), 900);
+        }
+      }
+    };
+    sw.addEventListener('click', () => { touched = true; setPower(!power.classList.contains('on')); });
+    // Fallback für die Vorführung: schaltet von selbst ein, wenn niemand klickt
+    let timer;
+    new IntersectionObserver(([e]) => {
+      clearTimeout(timer);
+      if (e.isIntersecting && !touched && !power.classList.contains('on')) timer = setTimeout(() => !touched && setPower(true), 6000);
+    }, { threshold: 0.6 }).observe(power);
+  }
 
   /* ---------- Navigations-Indikator (gleitende Pille) ---------- */
   const pill = $('.navpill');

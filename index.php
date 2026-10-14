@@ -71,6 +71,7 @@ $years = (int) date('Y') - SITE['founded'];
     <div class="bento">
       <a class="card bento-big hov" href="schaltschrankbau" data-reveal="scale">
         <?= img('bento', '(max-width: 1000px) 100vw, 55vw') ?>
+        <span class="wash" aria-hidden="true"></span>
         <div class="card-top">
           <span class="tile tile-teal"><?= icon('cabinet', 28) ?></span>
           <span class="go"><?= icon('arrow-r', 20) ?></span>
@@ -84,6 +85,7 @@ $years = (int) date('Y') - SITE['founded'];
       <div class="bento-col">
         <a class="card bento-card bento-photo spot hov" href="automatisierung" data-reveal style="--d:1">
           <?= img('auto_hero', '(max-width: 1000px) 100vw, 40vw') ?>
+          <span class="wash" aria-hidden="true"></span>
           <div class="card-top">
             <span class="tile"><?= icon('plc', 28) ?></span>
             <span class="go"><?= icon('arrow-r', 18) ?></span>
@@ -91,10 +93,11 @@ $years = (int) date('Y') - SITE['founded'];
           <h3>Automatisierung</h3>
           <p>DDC-Steuerungen für effizientere Lüftungs- und Heizungsanlagen – mit Programmierung und Visualisierung, für Fabriken und Fördersysteme.</p>
         </a>
-        <a class="card bento-card bento-teal bento-photo spot hov" href="msr-technik" data-reveal style="--d:2">
+        <a class="card bento-card bento-photo spot hov" href="msr-technik" data-reveal style="--d:2">
           <?= img('msr_hero', '(max-width: 1000px) 100vw, 40vw') ?>
+          <span class="wash" aria-hidden="true"></span>
           <div class="card-top">
-            <span class="tile tile-ink"><?= icon('gauge', 28) ?></span>
+            <span class="tile"><?= icon('gauge', 28) ?></span>
             <span class="go"><?= icon('arrow-r', 18) ?></span>
           </div>
           <h3>MSR-Technik</h3>

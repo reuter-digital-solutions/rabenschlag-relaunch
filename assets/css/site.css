@@ -755,3 +755,17 @@ select.fld { appearance: none; -webkit-appearance: none; padding-right: 44px; ba
 .power.on .power-switch::before { background: radial-gradient(circle, rgba(23,188,156,.28), transparent 62%); }
 .power-hint { font-size: 14px; letter-spacing: .02em; }
 @media (max-width: 640px) { .mainswitch { width: 220px; } .power { min-height: 0; } }
+
+/* Leistungskarten: Teal-Fläche nur beim Hover (alle drei Karten) */
+.bento-big .wash, .bento-photo .wash { position: absolute; inset: 0; z-index: -1; pointer-events: none; background: linear-gradient(to top, var(--teal) 0%, rgba(23,188,156,.95) 42%, rgba(23,188,156,.5) 72%, rgba(23,188,156,.12) 100%); clip-path: inset(100% 0 0 0); transition: clip-path .7s var(--ease-io); }
+.bento-big:hover .wash, .bento-photo:hover .wash, .bento-big:focus-visible .wash, .bento-photo:focus-visible .wash { clip-path: inset(0 0 0 0); }
+.bento-big h3, .bento-big p, .bento-photo h3, .bento-photo p { transition: color .45s var(--ease) .1s, text-shadow .45s; }
+.bento-big:hover, .bento-photo:hover { color: var(--ink); }
+.bento-big:hover h3, .bento-photo:hover h3 { color: var(--ink); text-shadow: none; }
+.bento-big:hover p, .bento-photo:hover p { color: #0F2E28; text-shadow: none; }
+.bento-big .pill { transition: background-color .45s, color .45s, border-color .45s; }
+.bento-big:hover .pill { background: rgba(14,19,20,.12); border-color: rgba(14,19,20,.18); color: var(--ink); }
+.bento-big:hover .go, .bento-photo:hover .go { background: var(--ink); color: #fff; }
+.bento-big .tile, .bento-photo .tile { transition: background-color .45s, color .45s, transform .5s var(--ease); }
+.bento-big:hover .tile, .bento-photo:hover .tile { background: var(--ink); color: var(--teal); --node: var(--volt); }
+.bento-big.spot::after, .bento-photo.spot::after { background: radial-gradient(420px circle at var(--mx) var(--my), rgba(255,255,255,.28), transparent 45%); }

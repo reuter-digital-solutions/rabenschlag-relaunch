@@ -127,7 +127,7 @@ function page_start(array $m): void
 <link rel="icon" href="favicon.ico">
 <link rel="preload" href="assets/fonts/Geist-Variable.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preconnect" href="https://images.unsplash.com">
-<link rel="stylesheet" href="assets/css/site.css?v=7">
+<link rel="stylesheet" href="assets/css/site.css?v=8">
 <script>document.documentElement.classList.replace('no-js','js')</script>
 <script src="assets/js/site.js?v=5" defer></script>
 <script type="application/ld+json"><?= json_encode($ld, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) ?></script>

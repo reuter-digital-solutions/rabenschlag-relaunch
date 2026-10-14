@@ -64,6 +64,12 @@
     });
   });
 
+  /* ---------- Hero-Video: bei reduzierter Bewegung anhalten, außerhalb des Sichtbereichs pausieren ---------- */
+  $$('.hero-video').forEach((v) => {
+    if (reduce) { v.removeAttribute('autoplay'); v.pause(); return; }
+    new IntersectionObserver(([e]) => (e.isIntersecting ? v.play().catch(() => {}) : v.pause())).observe(v);
+  });
+
   /* ---------- Zähler ---------- */
   const countIO = new IntersectionObserver((entries) => {
     entries.forEach((e) => {

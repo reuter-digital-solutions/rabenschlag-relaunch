@@ -28,9 +28,11 @@ $years = (int) date('Y') - SITE['founded'];
       </div>
 
       <div class="hero-media" data-reveal="clip" style="--d:2">
-        <?= img('hero', '(max-width: 1000px) 100vw, 45vw', '', true) ?>
+        <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="assets/video/serienfertigung-poster.jpg" aria-label="Video: Verdrahtung eines Schaltschranks in unserer Fertigung">
+          <source src="assets/video/serienfertigung.mp4" type="video/mp4">
+        </video>
         <span class="scanline" aria-hidden="true"></span>
-        <div class="tag"><span class="mono">=S1</span>Steuerungsbau</div>
+        <div class="tag"><span class="mono">=S1</span>Serienfertigung im eigenen Betrieb</div>
         <div class="hero-chips">
           <div class="float-chip"><span class="tile tile-sm"><?= icon('box', 20) ?></span><span><strong>Ab Losgröße 1</strong><small>Einzelstück bis Serie</small></span></div>
           <div class="float-chip"><span class="tile tile-sm"><?= icon('power', 20) ?></span><span><strong>Inbetriebnahme</strong><small>aus einer Hand</small></span></div>

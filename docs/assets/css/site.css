@@ -665,3 +665,6 @@ select.fld { appearance: none; -webkit-appearance: none; padding-right: 44px; ba
 .bento-big p, .bento-photo:not(.bento-teal) p { color: #E6EBE8; }
 .bento-big .pill { background: rgba(14,19,20,.62); border: 1px solid rgba(255,255,255,.16); color: #fff; }
 .bento-photo:not(.bento-teal)::before { background: linear-gradient(to top, rgba(14,19,20,.97) 0%, rgba(14,19,20,.9) 40%, rgba(14,19,20,.45) 72%, rgba(14,19,20,.2) 100%); }
+
+/* Hero-Video (Serienfertigung aus der eigenen Werkstatt) */
+.hero-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }

@@ -80,7 +80,8 @@ $years = (int) date('Y') - SITE['founded'];
         </div>
       </a>
       <div class="bento-col">
-        <a class="card bento-card spot hov" href="automatisierung" data-reveal style="--d:1">
+        <a class="card bento-card bento-photo spot hov" href="automatisierung" data-reveal style="--d:1">
+          <?= img('auto_hero', '(max-width: 1000px) 100vw, 40vw') ?>
           <div class="card-top">
             <span class="tile"><?= icon('plc', 28) ?></span>
             <span class="go"><?= icon('arrow-r', 18) ?></span>
@@ -88,7 +89,8 @@ $years = (int) date('Y') - SITE['founded'];
           <h3>Automatisierung</h3>
           <p>DDC-Steuerungen für effizientere Lüftungs- und Heizungsanlagen – mit Programmierung und Visualisierung, für Fabriken und Fördersysteme.</p>
         </a>
-        <a class="card bento-card bento-teal spot hov" href="msr-technik" data-reveal style="--d:2">
+        <a class="card bento-card bento-teal bento-photo spot hov" href="msr-technik" data-reveal style="--d:2">
+          <?= img('msr_hero', '(max-width: 1000px) 100vw, 40vw') ?>
           <div class="card-top">
             <span class="tile tile-ink"><?= icon('gauge', 28) ?></span>
             <span class="go"><?= icon('arrow-r', 18) ?></span>
@@ -179,9 +181,14 @@ $years = (int) date('Y') - SITE['founded'];
       </article>
       <?php endforeach; ?>
     </div>
-    <div class="partners" data-reveal>
-      <span>Partner vertrauen auf unsere Expertise</span>
-      <div><span class="ph-chip">[Logo Siemens]</span><span class="ph-chip">[Logo Henkel]</span><span class="ph-chip">[Logo Gelsenwasser]</span></div>
+    <div class="partners">
+      <span data-reveal>Partner vertrauen auf unsere Expertise</span>
+      <ul class="logos" data-stagger>
+        <li><img src="assets/img/partner/siemens.svg" alt="Siemens" width="160" height="25" loading="lazy"></li>
+        <li><img src="assets/img/partner/henkel.svg" alt="Henkel" width="58" height="43" loading="lazy" class="logo-h"></li>
+        <li><img src="assets/img/partner/gelsenwasser.png" alt="Gelsenwasser" width="170" height="40" loading="lazy"></li>
+        <li><img src="assets/img/partner/fkr.png" alt="FKR Krefeld" width="40" height="40" loading="lazy" class="logo-h"></li>
+      </ul>
     </div>
   </div>
 </section>

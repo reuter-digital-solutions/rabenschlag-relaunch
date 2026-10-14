@@ -254,9 +254,10 @@ button { cursor: pointer; }
 .bento { display: flex; flex-wrap: wrap; gap: 16px; }
 .bento-big { flex: 1.35 1 520px; min-width: 0; min-height: 620px; overflow: hidden; border-radius: var(--r-lg); background: var(--ink-3); color: #fff; text-decoration: none; display: flex; flex-direction: column; justify-content: space-between; padding: 28px; }
 .bento-big:hover { color: #fff; }
-.bento-big img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease); }
+.bento-big { isolation: isolate; }
+.bento-big img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 1.2s var(--ease); }
 .bento-big:hover img { transform: scale(1.05); }
-.bento-big::before { content: ""; position: absolute; inset: 0; z-index: 0; background: linear-gradient(to top, rgba(14,19,20,.96) 0%, rgba(14,19,20,.78) 38%, rgba(14,19,20,.25) 70%, rgba(14,19,20,.15) 100%); }
+.bento-big::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(14,19,20,.96) 0%, rgba(14,19,20,.78) 38%, rgba(14,19,20,.25) 70%, rgba(14,19,20,.15) 100%); }
 .bento-big > *:not(img) { position: relative; z-index: 1; }
 .bento-big .go { background: rgba(255,255,255,.14); color: #fff; backdrop-filter: blur(6px); }
 .bento-big h3 { font-size: clamp(32px, 3.4vw, 48px); line-height: 1; font-weight: 600; letter-spacing: -.035em; }
@@ -632,3 +633,28 @@ select.fld { appearance: none; -webkit-appearance: none; padding-right: 44px; ba
 /* Verlaufstext innerhalb animierter Headlines: Verlauf pro Wort setzen */
 .split-words .grad-text { background: none; color: var(--teal); animation: none; -webkit-background-clip: border-box; background-clip: border-box; }
 .split-words .grad-text .w > span { background: linear-gradient(100deg, var(--teal) 10%, var(--teal-hi) 50%, var(--teal) 90%); background-size: 200% 100%; -webkit-background-clip: text; background-clip: text; color: transparent; animation: shimmer 6s linear infinite; }
+
+/* Bento-Karten mit Foto (Automatisierung, MSR-Technik) */
+.bento-photo { min-height: 300px; border: 0; color: #fff; isolation: isolate; }
+.bento-photo:hover { color: #fff; }
+.bento-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; transition: transform 1.2s var(--ease); }
+.bento-photo:hover img { transform: scale(1.06); }
+.bento-photo::before { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to top, rgba(14,19,20,.96) 0%, rgba(14,19,20,.78) 42%, rgba(14,19,20,.2) 78%, rgba(14,19,20,.1) 100%); transition: opacity .5s; }
+.bento-photo h3 { margin-top: auto; padding-top: 96px; }
+.bento-photo p { color: #D3D9D6; }
+.bento-photo .go { background: rgba(255,255,255,.14); color: #fff; backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.bento-photo .tile:not(.tile-ink) { background: rgba(255,255,255,.92); }
+.bento-teal.bento-photo, .bento-teal.bento-photo:hover { color: var(--ink); }
+.bento-teal.bento-photo::before { background: linear-gradient(to top, var(--teal) 0%, rgba(23,188,156,.94) 44%, rgba(23,188,156,.35) 74%, rgba(14,19,20,.05) 100%); }
+.bento-teal.bento-photo p { color: #0F2E28; }
+.bento-teal.bento-photo .go { background: var(--ink); color: #fff; }
+
+/* Partnerlogos */
+.logos { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 12px; }
+.logos li { height: 72px; min-width: 150px; padding: 0 26px; border-radius: 18px; border: 1px solid var(--line); background: #fff; display: flex; align-items: center; justify-content: center; transition: border-color .3s, transform .4s var(--ease), box-shadow .4s; }
+.logos img { height: 26px; width: auto; filter: grayscale(1) contrast(.9); opacity: .6; transition: filter .4s, opacity .4s, transform .4s var(--ease); }
+.logos img.logo-h { height: 40px; }
+.logos li:hover { border-color: var(--teal); transform: translateY(-3px); box-shadow: var(--shadow); }
+.logos li:hover img { filter: none; opacity: 1; transform: scale(1.05); }
+@media (hover: none) { .logos img { filter: none; opacity: 1; } }
+@media (max-width: 640px) { .logos li { flex: 1 1 calc(50% - 6px); min-width: 0; padding: 0 14px; } }

@@ -1,0 +1,5 @@
+# Lokal / geheim
+inc/secret.php
+_dev-mails/
+.DS_Store
+*.log

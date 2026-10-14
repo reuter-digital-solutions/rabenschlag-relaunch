@@ -1,0 +1,212 @@
+<?php
+require __DIR__ . '/inc/layout.php';
+
+page_start([
+    'title'       => 'Elektrotechnik Rabenschlag – Schaltschrankbau, Automatisierung & MSR-Technik in Korschenbroich',
+    'description' => 'Innungsbetrieb seit 2000: Schaltschrankbau ab Losgröße 1, Automatisierung mit DDC-Programmierung und Visualisierung sowie MSR-Technik für Heizung, Lüftung und Klima – von der Beratung bis zur Inbetriebnahme.',
+    'path'        => '',
+    'body'        => 'page-home',
+]);
+site_header();
+$years = (int) date('Y') - SITE['founded'];
+?>
+<main id="main">
+
+<!-- ============ HERO ============ -->
+<section class="hero">
+  <?= circuit_bg() ?>
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <span class="live-chip" data-reveal><span class="live-dot"></span>Innungsbetrieb in Korschenbroich · seit <?= SITE['founded'] ?></span>
+        <h1 class="h1" data-split>Schaltschränke, Steuerungen &amp; MSR&#8209;Technik <span class="grad-text">aus einer Hand.</span></h1>
+        <p class="lead" data-reveal style="--d:4">Von der technischen Beratung über Projektierung, Programmierung und Schaltschrankbau bis zur Inbetriebnahme – für Heizung, Lüftung und Klima ebenso wie für Förder- und Produktionsanlagen.</p>
+        <div class="hero-ctas" data-reveal style="--d:6">
+          <?= btn('Projekt anfragen', '#kontakt') ?>
+          <a class="btn btn-line mag" href="tel:<?= e(SITE['mobile_tel']) ?>"><?= icon('phone', 18) ?><span class="btn-label"><?= e(SITE['mobile']) ?></span></a>
+        </div>
+      </div>
+
+      <div class="hero-media" data-reveal="clip" style="--d:2">
+        <?= img('hero', '(max-width: 1000px) 100vw, 45vw', '', true) ?>
+        <span class="scanline" aria-hidden="true"></span>
+        <div class="tag"><span class="mono">=S1</span>Steuerungsbau</div>
+        <div class="hero-chips">
+          <div class="float-chip"><span class="tile tile-sm"><?= icon('box', 20) ?></span><span><strong>Ab Losgröße 1</strong><small>Einzelstück bis Serie</small></span></div>
+          <div class="float-chip"><span class="tile tile-sm"><?= icon('globe', 20) ?></span><span><strong>Inbetriebnahme</strong><small>auch weltweit</small></span></div>
+        </div>
+      </div>
+    </div>
+
+    <dl class="stats" data-stagger>
+      <div><dt>Erfahrung</dt><dd><span data-count="<?= $years ?>">0</span><small>Jahre</small></dd></div>
+      <div><dt>Fachbereiche</dt><dd><span data-count="3">0</span></dd></div>
+      <div><dt>Projektschritte aus einer Hand</dt><dd><span data-count="6">0</span></dd></div>
+      <div><dt>Betrieb</dt><dd>Innung</dd></div>
+    </dl>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <?php for ($r = 0; $r < 2; $r++): ?>
+    <span>Schaltschrankbau <?= icon('bolt', 20) ?> DDC-Programmierung <?= icon('bolt', 20) ?> Visualisierung <?= icon('bolt', 20) ?> Heizung · Lüftung · Klima <?= icon('bolt', 20) ?> Bus-Systeme <?= icon('bolt', 20) ?> Fördertechnik <?= icon('bolt', 20) ?> Inbetriebnahme weltweit <?= icon('bolt', 20) ?></span>
+    <?php endfor; ?>
+  </div>
+</div>
+
+<!-- ============ LEISTUNGEN ============ -->
+<section class="section" id="leistungen">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <?= eyebrow('Leistungen') ?>
+        <h2 class="h2" data-split>Drei Fachbereiche. <span class="muted">Ein Projektpartner.</span></h2>
+      </div>
+      <p data-reveal style="--d:2">Planung, Fertigung und Programmierung verantworten wir selbst – die drei Bereiche greifen nahtlos ineinander.</p>
+    </div>
+
+    <div class="bento">
+      <a class="card bento-big hov" href="schaltschrankbau" data-reveal="scale">
+        <?= img('bento', '(max-width: 1000px) 100vw, 55vw') ?>
+        <div class="card-top">
+          <span class="tile tile-teal"><?= icon('cabinet', 28) ?></span>
+          <span class="go"><?= icon('arrow-r', 20) ?></span>
+        </div>
+        <div>
+          <h3>Schaltschrankbau</h3>
+          <p>Individuelle Steuerungen und Serienaufträge. Jedes Gehäuse und jede Grundplatte wird bei uns einzeln bearbeitet – jedes Element sitzt exakt an seiner Position.</p>
+          <div class="pills"><span class="pill">Sonderanfertigung</span><span class="pill">Schranksysteme</span><span class="pill">Klein- &amp; Großserie</span></div>
+        </div>
+      </a>
+      <div class="bento-col">
+        <a class="card bento-card spot hov" href="automatisierung" data-reveal style="--d:1">
+          <div class="card-top">
+            <span class="tile"><?= icon('plc', 28) ?></span>
+            <span class="go"><?= icon('arrow-r', 18) ?></span>
+          </div>
+          <h3>Automatisierung</h3>
+          <p>DDC-Steuerungen für effizientere Lüftungs- und Heizungsanlagen – mit Programmierung und Visualisierung, für Fabriken und Fördersysteme.</p>
+        </a>
+        <a class="card bento-card bento-teal spot hov" href="msr-technik" data-reveal style="--d:2">
+          <div class="card-top">
+            <span class="tile tile-ink"><?= icon('gauge', 28) ?></span>
+            <span class="go"><?= icon('arrow-r', 18) ?></span>
+          </div>
+          <h3>MSR-Technik</h3>
+          <p>Messen, Steuern, Regeln für Heizung, Lüftung und Klima – mit DDC-Programmierung, Bus-Systemen und Installation durch eigene Mitarbeiter.</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABLAUF ============ -->
+<section class="section section-tight" id="ablauf">
+  <div class="panel">
+    <div class="sec-head">
+      <div>
+        <?= eyebrow('Ablauf') ?>
+        <h2 class="h2-sm" style="margin-top:16px" data-split>Vom ersten Gespräch bis zum laufenden Betrieb.</h2>
+      </div>
+      <p data-reveal style="--d:2">Ein Ansprechpartner für alle Schritte – keine Schnittstellenverluste zwischen Planung, Bau und Programmierung.</p>
+    </div>
+    <div class="steps-wrap" data-steps>
+    <span class="steps-line" aria-hidden="true"></span>
+    <ol class="steps">
+      <?php
+      $steps = [['chat', 'Technische Beratung'], ['plan', 'Projektierung'], ['code', 'Programmierung &amp; Visualisierung'], ['cabinet', 'Schaltschrankbau'], ['wrench', 'Installation'], ['power', 'Inbetriebnahme']];
+      foreach ($steps as $k => [$ic, $t]): ?>
+      <li class="step" data-reveal style="--d:<?= $k ?>">
+        <div class="step-top"><span class="tile tile-sm tile-white"><?= icon($ic, 22) ?></span><span class="step-num">0<?= $k + 1 ?></span></div>
+        <span class="step-title"><?= $t ?></span>
+      </li>
+      <?php endforeach; ?>
+    </ol>
+    </div>
+  </div>
+</section>
+
+<!-- ============ UNTERNEHMEN ============ -->
+<section class="section section-tight" id="unternehmen">
+  <div class="wrap about">
+    <div class="about-media">
+      <div class="media media-tall" data-reveal="clip"><?= img('firma', '(max-width: 1000px) 50vw, 25vw') ?></div>
+      <div class="media media-sq" data-reveal="clip" style="--d:1"><?= img('firma2', '(max-width: 1000px) 50vw, 25vw') ?></div>
+      <div class="innung" data-reveal style="--d:2">
+        <span class="tile tile-glass"><?= icon('award', 24) ?></span>
+        <span><strong>Innungsbetrieb</strong><small>Fachrichtung Elektrotechnik</small></span>
+      </div>
+    </div>
+    <div class="about-copy">
+      <?= eyebrow('Unternehmen') ?>
+      <h2 class="h2" data-split>Aus Leidenschaft für Technik.</h2>
+      <p class="lead" data-reveal style="--d:2">Seit unserer Gründung im Jahr <?= SITE['founded'] ?> haben wir uns stetig weiterentwickelt. Angefangen mit MSR-Technik und Schaltanlagenbau, sind wir heute etablierter Partner der Automatisierungstechnik – mit dem Anspruch, unseren Kunden zukunftssichere Technologie zu bieten.</p>
+      <div class="facts" data-stagger>
+        <div class="fact"><small>Geschäftsführer</small><strong><?= e(SITE['owner']) ?></strong></div>
+        <div class="fact"><small>Schwerpunkt</small><strong>MSR-Technik</strong></div>
+        <div class="fact"><small>Standort</small><strong><?= e(SITE['city']) ?></strong></div>
+        <div class="fact"><small>Fertigung</small><strong>Einzelstück bis Serie</strong></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROJEKTE ============ -->
+<section class="section band" id="projekte">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <?= eyebrow('Projekte') ?>
+        <h2 class="h2" data-split>Ausgewählte Projekte</h2>
+      </div>
+      <p data-reveal style="--d:2">Ein Einblick in unsere Arbeit – von der Lüftungsanlage bis zur Förderstrecke.</p>
+    </div>
+    <div class="projects">
+      <?php
+      $projects = [
+          ['Automatisierung', 'plc', 'Lüftungsanlage für Produktion und Reinigung eines Zerlegebetriebs', 'Programmierung · Visualisierung · Schaltschrankbau', '[Kunde], Düsseldorf'],
+          ['MSR-Technik', 'gauge', 'Heizungsanlage mit BHKW, Hybridsolar und Eisspeicher, Anbindung an den Pool', 'Konzeption · Visualisierung · Programmierung', '[Kunde, Ort]'],
+          ['Schaltschrankbau', 'cabinet', 'Förderstrecke mit Anbindung an einen OPC-Server', 'Visualisierung · Programmierung', '[Kunde, Ort]'],
+          ['Komplettprojekt', 'globe', 'Von der Beratung bis zur Inbetriebnahme – weltweit', 'Beratung · Projektierung · Programmierung · Schaltschrankbau · Installation', '[Kunde], Düsseldorf'],
+      ];
+      foreach ($projects as $k => [$cat, $ic, $title, $scope, $client]): ?>
+      <article class="card project spot<?= $k === 3 ? ' project-dark' : '' ?>" data-reveal style="--d:<?= $k ?>">
+        <div class="card-top"><span class="cat"><?= icon($ic, 16) ?><?= e($cat) ?></span><span class="pnum">P.0<?= $k + 1 ?></span></div>
+        <h3><?= e($title) ?></h3>
+        <p><?= e($scope) ?></p>
+        <span class="client"><?= e($client) ?></span>
+      </article>
+      <?php endforeach; ?>
+    </div>
+    <div class="partners" data-reveal>
+      <span>Partner vertrauen auf unsere Expertise</span>
+      <div><span class="ph-chip">[Logo Siemens]</span><span class="ph-chip">[Logo Henkel]</span><span class="ph-chip">[Logo Gelsenwasser]</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ KARRIERE ============ -->
+<section class="section" style="padding-bottom:0">
+  <div class="career" data-reveal="scale">
+    <div class="career-copy">
+      <?= eyebrow('Karriere', true) ?>
+      <h2 class="h2" data-split>Sie bringen Maschinen gern zum Tanzen?</h2>
+      <p data-reveal style="--d:2">Sondermaschinenbau, Fördertechnik, MSR-Anlagen und schöne Visualisierungen – in einem festen Team mit flexiblen Arbeitszeiten.</p>
+      <div class="pills" data-reveal style="--d:3"><span class="pill pill-light">Vollzeit, unbefristet</span><span class="pill pill-light">Ab sofort</span><span class="pill pill-light">Tankgutscheine</span></div>
+    </div>
+    <div class="career-jobs" data-stagger="left">
+      <?php foreach (STELLEN as $slug => $s): ?>
+      <a class="job hov" href="karriere?stelle=<?= e($slug) ?>#bewerbung">
+        <span class="job-main"><span class="tile tile-sm"><?= icon($s['icon'], 22) ?></span><span><strong><?= e($s['title']) ?></strong><small><?= e($s['text']) ?></small></span></span>
+        <span class="go"><?= icon('arrow-ur', 18) ?></span>
+      </a>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<?php contact_section(); ?>
+
+</main>
+<?php site_footer(); ?>

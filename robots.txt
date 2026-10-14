@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /inc/
+Disallow: /api/
+
+Sitemap: https://www.elektrotechnik-rabenschlag.de/sitemap.xml

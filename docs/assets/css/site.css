@@ -658,3 +658,10 @@ select.fld { appearance: none; -webkit-appearance: none; padding-right: 44px; ba
 .logos li:hover img { filter: none; opacity: 1; transform: scale(1.05); }
 @media (hover: none) { .logos img { filter: none; opacity: 1; } }
 @media (max-width: 640px) { .logos li { flex: 1 1 calc(50% - 6px); min-width: 0; padding: 0 14px; } }
+
+/* Lesbarkeit der Bild-Karten (Leistungen) – kräftiger Verlauf, Textschatten, dunkle Pills */
+.bento-big::before { background: linear-gradient(to top, rgba(14,19,20,.97) 0%, rgba(14,19,20,.92) 30%, rgba(14,19,20,.6) 55%, rgba(14,19,20,.25) 78%, rgba(14,19,20,.2) 100%); }
+.bento-big h3, .bento-big p, .bento-photo:not(.bento-teal) h3, .bento-photo:not(.bento-teal) p { text-shadow: 0 1px 2px rgba(0,0,0,.55), 0 4px 24px rgba(0,0,0,.45); }
+.bento-big p, .bento-photo:not(.bento-teal) p { color: #E6EBE8; }
+.bento-big .pill { background: rgba(14,19,20,.62); border: 1px solid rgba(255,255,255,.16); color: #fff; }
+.bento-photo:not(.bento-teal)::before { background: linear-gradient(to top, rgba(14,19,20,.97) 0%, rgba(14,19,20,.9) 40%, rgba(14,19,20,.45) 72%, rgba(14,19,20,.2) 100%); }
